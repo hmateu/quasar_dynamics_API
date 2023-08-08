@@ -92,8 +92,7 @@ class CategoryController extends AbstractController
                         'message' => 'El campo nombre no puede estar vacío.'
                     ]),
                     new Assert\Regex([
-                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/
-                                    ',
+                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/',
                         'match' => true,
                         'message' => 'Formato de nombre no válido.'
                     ])
@@ -103,8 +102,7 @@ class CategoryController extends AbstractController
                         'message' => 'El campo descripción no puede estar vacío.'
                     ]),
                     new Assert\Regex([
-                        'pattern' => '/^(?!\s)(?! *$)[A-Za-z0-9 ]{10,255}$/
-                                    ',
+                        'pattern' => '/^(?!\s)(?! *$)[A-Za-z0-9 ]{10,255}$/',
                         'match' => true,
                         'message' => 'Formato de descripción no válido.'
                     ])
@@ -205,7 +203,7 @@ class CategoryController extends AbstractController
     {
         try {
             $entityManager = $doctrine->getManager();
-            $categoryRepository = $entityManager->getRepository(User::class);
+            $categoryRepository = $entityManager->getRepository(Category::class);
 
             $category = $categoryRepository->find($id);
 

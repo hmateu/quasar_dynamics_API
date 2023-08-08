@@ -1,0 +1,8 @@
+App\Entity\Note:
+  attributes:
+    id:
+      groups: ['note']
+    user:
+      groups: ['note']
+    description:
+      groups: ['note']

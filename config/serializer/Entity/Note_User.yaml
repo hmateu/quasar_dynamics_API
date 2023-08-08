@@ -1,0 +1,15 @@
+App\Entity\User:
+  attributes:
+    id:
+      groups: ['note_user']
+    name:
+      groups: ['note_user']
+      
+App\Entity\Note:
+  attributes:
+    id:
+      groups: ['note_user']
+    description:
+      groups: ['note_user']
+    user:
+      groups: ['note_user']

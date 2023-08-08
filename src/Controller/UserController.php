@@ -92,8 +92,7 @@ class UserController extends AbstractController
                         'message' => 'El campo nombre no puede estar vacío.'
                     ]),
                     new Assert\Regex([
-                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/
-                                    ',
+                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/',
                         'match' => true,
                         'message' => 'Formato de nombre no válido.'
                     ])
@@ -103,8 +102,7 @@ class UserController extends AbstractController
                         'message' => 'El campo apellidos no puede estar vacío.'
                     ]),
                     new Assert\Regex([
-                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/
-                                    ',
+                        'pattern' => '/^(?=(?:[^A-Za-z]*[A-Za-z]){2})(?!(?:[^A-Za-z]*[A-Za-z]){21})[A-Za-z ]{2,20}$/',
                         'match' => true,
                         'message' => 'Formato de apellidos no válido.'
                     ])
