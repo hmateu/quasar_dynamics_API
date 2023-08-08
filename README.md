@@ -27,30 +27,17 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
 
 - Endpoints referentes a la **tabla de usuarios**
 
-    - **/users** : Recupera todos los usuarios  
+    - **/users** : Recupera todos los usuarios - **GET**
 
-            GET http://127.0.0.1:8000/users
+            http://127.0.0.1:8000/users
 
-    - **/user/{id}** : Recupera el usuario con el id que le pases 
+    - **/user/{id}** : Recupera el usuario con el id que le pases - **GET**
 
-            GET http://127.0.0.1:8000/user/3
+            http://127.0.0.1:8000/user/3
 
-    - **/new-user** : Crea un usuario nuevo
+    - **/new-user** : Crea un usuario nuevo - **POST**
 
-            POST http://127.0.0.1:8000/new-user
-
-        body:
-        ``` js
-            {
-                "name" : "Pepe",
-                "surname" : "Oltra Sanchis",
-                "email" : "pepe@gmail.com"
-            }
-        ```
-
-    - **/user/{id}** : Modifica el usuario con el id que le pases
-
-            PUT http://127.0.0.1:8000/user/3
+            http://127.0.0.1:8000/new-user
 
         body:
         ``` js
@@ -61,9 +48,22 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
             }
         ```
 
-    - **/user/{id}** : Elimina el usuario con el id que le pases
+    - **/user/{id}** : Modifica el usuario con el id que le pases - **PUT**
 
-            DELETE http://127.0.0.1:8000/user/3
+            http://127.0.0.1:8000/user/3
+
+        body:
+        ``` js
+            {
+                "name" : "Pepe",
+                "surname" : "Oltra Sanchis",
+                "email" : "pepe@gmail.com"
+            }
+        ```
+
+    - **/user/{id}** : Elimina el usuario con el id que le pases - **DELETE**
+
+            http://127.0.0.1:8000/user/3
         
 </details>
 <details>
@@ -71,17 +71,17 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
 
 - Endpoints referentes a la **tabla de notas**
 
-    - **/notes** : Recupera todas las notas  
+    - **/notes** : Recupera todas las notas - **GET**
 
-            GET http://127.0.0.1:8000/notes
+            http://127.0.0.1:8000/notes
 
-    - **/note/{id}** : Recupera la nota con el id que le pases 
+    - **/note/{id}** : Recupera la nota con el id que le pases - **GET**
 
-            GET http://127.0.0.1:8000/note/3
+            http://127.0.0.1:8000/note/3
 
-    - **/new-note** : Crea una nota nueva
+    - **/new-note** : Crea una nota nueva - **POST**
 
-            POST http://127.0.0.1:8000/new-note
+            http://127.0.0.1:8000/new-note
 
         body:
         ``` js
@@ -92,9 +92,9 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
             }
         ```
 
-    - **/note/{id}** : Modifica la nota con el id que le pases
+    - **/note/{id}** : Modifica la nota con el id que le pases - **PUT**
 
-            PUT http://127.0.0.1:8000/note/3
+            http://127.0.0.1:8000/note/3
         
         body:
         ``` js
@@ -104,9 +104,9 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
             }
         ```
 
-    - **/user/{id}** : Elimina la nota con el id que le pases
+    - **/user/{id}** : Elimina la nota con el id que le pases - **DELETE**
 
-            DELETE http://127.0.0.1:8000/user/3
+            http://127.0.0.1:8000/user/3
         
 </details>
 <details>
@@ -114,17 +114,17 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
 
 - Endpoints referentes a la **tabla de categorías**
 
-    - **/categories** : Recupera todas las categorías  
+    - **/categories** : Recupera todas las categorías - **GET**
 
-            GET http://127.0.0.1:8000/categories
+            http://127.0.0.1:8000/categories
 
-    - **/category/{id}** : Recupera la categoría con el id que le pases 
+    - **/category/{id}** : Recupera la categoría con el id que le pases - **GET**
 
-            GET http://127.0.0.1:8000/category/3
+            http://127.0.0.1:8000/category/3
 
-    - **/new-category** : Crea una categoría nueva
+    - **/new-category** : Crea una categoría nueva - **POST**
 
-            POST http://127.0.0.1:8000/new-category
+            http://127.0.0.1:8000/new-category
 
         body:
         ``` js
@@ -134,9 +134,9 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
             }
         ```
 
-    - **/category/{id}** : Modifica la categoría con el id que le pases
+    - **/category/{id}** : Modifica la categoría con el id que le pases - **PUT**
 
-            PUT http://127.0.0.1:8000/category/3
+            http://127.0.0.1:8000/category/3
         
         body:
         ``` js
@@ -146,9 +146,9 @@ A continuación se detallan los endpoints que han sido desarrollados en esta API
             }
         ```
 
-    - **/category/{id}** : Elimina la categoría con el id que le pases
+    - **/category/{id}** : Elimina la categoría con el id que le pases - **DELETE**
 
-            DELETE http://127.0.0.1:8000/category/3
+            http://127.0.0.1:8000/category/3
         
 </details>
 
