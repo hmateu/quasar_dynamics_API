@@ -179,16 +179,16 @@ class CategoryController extends AbstractController
 
             $data = json_decode($request->getContent(), true);
 
-            $serializer->deserialize(json_encode($data), Category::class, 'json', ['object_to_populate' => $category]);
+            // Actualiza las propiedades manualmente apra evitar el error de referencia circular
+            $category->setName($data['name']);
+            $category->setDescription($data['description']);
 
             $entityManager->flush();
 
-            $responseData = $serializer->serialize($category, 'json');
-
             return new JsonResponse([
                 'success' => true,
-                'message' => 'Modificada la categoría con id ' . $id,
-                'data' => json_decode($responseData, true)
+                'message' => 'Modificada la categoría con id ' . $id
+                // 'data' => $serializedData
             ], Response::HTTP_OK);
         } catch (\Throwable $th) {
             return new JsonResponse([
@@ -197,6 +197,7 @@ class CategoryController extends AbstractController
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
+
 
     #[Route('/category/{id}', name: 'delete_category', methods: ['DELETE'])]
     public function delete(ManagerRegistry $doctrine, int $id, SerializerInterface $serializer): JsonResponse
