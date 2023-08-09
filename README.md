@@ -29,6 +29,7 @@ Symfony</h2>
 
 ## Endpoints
 A continuación se detallan los endpoints que han sido desarrollados en esta API para poder ser atacados desde un front. Desde Postman puedes verificar que funcionan correctamente.
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/27515925-be91891e-b650-4897-ae0f-20d46493f79d?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27515925-be91891e-b650-4897-ae0f-20d46493f79d%26entityType%3Dcollection%26workspaceId%3D02153a37-ccbf-4ee6-ad55-82ec54745509)
 <details>
 <summary>Usuarios</summary>
