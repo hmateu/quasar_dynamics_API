@@ -3,15 +3,23 @@
 Symfony</h2>
 
 ## Tabla de contenidos 📝
-- <a href="#objetivo">Objetivo</a>
+- <a href="#instalación">Instalación</a>
 - <a href="#diagrama-er">Diagrama Entidad Relación</a>
 - <a href="#tecnologías-utilizadas">Stack - Tecnologías utilizadas</a>
+- <a href="#endpoints">Endpoints</a>
 - <a href="#licencia">Licencia</a>
 
-## Objetivo
-El objetivo de esta prueba técnica, es desarrollar una API utilizando el framework
-Symfony que permita realizar operaciones CRUD en formato REST para las
-entidades Usuario, Nota y Categoría.
+## Instalación
+1. Instala las dependencias
+> `$ composer install`
+2. Crea la base de datos
+>`$ php bin/console doctrine:database:create`
+3. Ejecuta las migraciones
+>`$ php bin/console doctrine:migrations:migrate`
+4. Ejecuta las Fixtures
+>`$ php bin/console doctrine:fixtures:load`
+5. Levanta el servidor
+>`$ symfony server:start`
 
 ## Diagrama ER
 ![image](./img/db_diagram.jpg)
@@ -21,7 +29,7 @@ entidades Usuario, Nota y Categoría.
 
 ## Endpoints
 A continuación se detallan los endpoints que han sido desarrollados en esta API para poder ser atacados desde un front. Desde Postman puedes verificar que funcionan correctamente.
-
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/27515925-be91891e-b650-4897-ae0f-20d46493f79d?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D27515925-be91891e-b650-4897-ae0f-20d46493f79d%26entityType%3Dcollection%26workspaceId%3D02153a37-ccbf-4ee6-ad55-82ec54745509)
 <details>
 <summary>Usuarios</summary>
 

@@ -177,7 +177,7 @@ class NoteController extends AbstractController
     }
 
     #[Route('/note/{id}', name: 'modify_note', methods: ['PUT', 'PATCH'])]
-    public function updateAppointment(Request $request, EntityManagerInterface $entityManager, int $id, SerializerInterface $serializer): JsonResponse
+    public function updateNote(Request $request, EntityManagerInterface $entityManager, int $id, SerializerInterface $serializer): JsonResponse
     {
         try {
             $note = $entityManager->getRepository(Note::class)->find($id);
