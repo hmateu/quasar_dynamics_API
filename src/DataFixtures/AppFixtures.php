@@ -52,18 +52,21 @@ class AppFixtures extends Fixture
         $note1->setDescription('Diseña la vista Home');
         $note1->setUser($user3);
         $note1->addCategory($category1);
+        $note1->setDate(new \DateTime('2023-08-17'));
         $manager->persist($note1);
 
         $note2 = new Note();
         $note2->setDescription('Diseña el diagrama de la base de datos');
         $note2->setUser($user1);
         $note2->addCategory($category3);
+        $note2->setDate(new \DateTime('2023-08-09'));
         $manager->persist($note2);
 
         $note3 = new Note();
         $note3->setDescription('Desarrolla la vista Login');
         $note3->setUser($user2);
         $note3->addCategory($category2);
+        $note3->setDate(new \DateTime('2023-07-17'));
         $manager->persist($note3);
 
         $manager->flush();
