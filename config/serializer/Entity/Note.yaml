@@ -6,3 +6,5 @@ App\Entity\Note:
       groups: ['note']
     description:
       groups: ['note']
+    date:
+      groups: ['note']
