@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Note;
+use DateInterval;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -21,28 +23,21 @@ class NoteRepository extends ServiceEntityRepository
         parent::__construct($registry, Note::class);
     }
 
-//    /**
-//     * @return Note[] Returns an array of Note objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('n.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('n.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
 
-//    public function findOneBySomeField($value): ?Note
-//    {
-//        return $this->createQueryBuilder('n')
-//            ->andWhere('n.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    public function getOldNotes(): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $today = new DateTime('now');
+
+        $aWeekAgo = $today->sub(new DateInterval('P7D'));
+
+        $query = $entityManager->createQuery(
+            'SELECT n
+            FROM App\Entity\Note n
+            WHERE n.date < :date'
+        )->setParameter('date', $aWeekAgo);
+
+        return $query->getResult();
+    }
 }

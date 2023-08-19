@@ -81,6 +81,39 @@ class NoteController extends AbstractController
         }
     }
 
+    #[Route('/old-notes', name: 'get_old_notes', methods: ['GET'])]
+    public function getOldNotes(EntityManagerInterface $entityManager, SerializerInterface $serializer): JsonResponse
+    {
+        try {
+            $notes = $entityManager->getRepository(Note::class)->getOldNotes();
+
+            if (!$notes) {
+                return new JsonResponse([
+                    'success' => true,
+                    'message' => 'No se ha encontrado ninguna nota de hace más de 7 días'
+                ], Response::HTTP_NOT_FOUND);
+            }
+
+            $notesAsJson = $serializer->serialize($notes, 'json', ['groups' => 'note_user']);
+
+            $notesArray = json_decode($notesAsJson, true);
+
+            $responseArray = [
+                'success' => true,
+                'data' => $notesArray
+            ];
+
+            $responseJson = json_encode($responseArray, JSON_UNESCAPED_UNICODE);
+
+            return new JsonResponse($responseJson, Response::HTTP_OK, [], JSON_UNESCAPED_UNICODE);
+        } catch (\Throwable $th) {
+            return new JsonResponse([
+                'success' => false,
+                'message' => 'Error al mostrar las notas de hace más de 7 días: ' . $th->getMessage()
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
+
     #[Route('/new-note', name: 'create_note', methods: ['POST'])]
     public function createNote(Request $request, ValidatorInterface $validator, EntityManagerInterface $entityManager): JsonResponse
     {

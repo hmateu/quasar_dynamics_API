@@ -13,3 +13,5 @@ App\Entity\Note:
       groups: ['note_user']
     user:
       groups: ['note_user']
+    date:
+      groups: ['note_user']
